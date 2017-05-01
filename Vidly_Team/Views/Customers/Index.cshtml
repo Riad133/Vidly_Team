@@ -1,0 +1,26 @@
+﻿@model  Vidly_Team.ViewModel.CustomersListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer</h2>
+<a href="@Url.Action("New","Customers")" class="btn btn-primary">New</a>
+<table class="table table-bordered table-hover">
+    <thead>
+    <th>Customer</th>
+    <th>Membership Type</th>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = @customer.Id }, null)</td>
+                <td>@customer.MembershipType.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
