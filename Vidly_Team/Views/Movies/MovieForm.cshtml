@@ -14,7 +14,7 @@ else
 }
 @using (Html.BeginForm("Save", "Movies"))
 {
-    @Html.ValidationSummary()
+    @Html.ValidationSummary("Please Give Proper information")
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.Name)
         @Html.TextBoxFor(m => m.Movie.Name, new {@class = "form-control"})

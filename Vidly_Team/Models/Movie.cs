@@ -20,6 +20,7 @@ namespace Vidly_Team.Models
         public DateTime DateAdded  { get; set; }
 
         [Required(ErrorMessage = "Please enter customer's name.")]
+        [AddedDateMustBeGreaterThenRelease]
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
         [Required]
