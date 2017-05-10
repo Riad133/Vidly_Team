@@ -49,11 +49,13 @@ namespace Vidly_Team.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var customerView = new CustomerForViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm",customerView);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)

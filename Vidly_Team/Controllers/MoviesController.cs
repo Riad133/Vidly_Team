@@ -71,6 +71,7 @@ namespace Vidly_Team.Controllers
 			return View("MovieForm",movie);
 		}
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult Save(Movie movie)
 		{
 			if (!ModelState.IsValid)

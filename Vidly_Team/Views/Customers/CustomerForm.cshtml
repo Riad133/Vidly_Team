@@ -15,7 +15,8 @@ else
 
 @using (Html.BeginForm("Save", "Customers"))
 {
-    @Html.ValidationSummary("Please Give Proper information ")
+    @Html.ValidationSummary(true,"Please fix the following Error!!")
+   
     @Html.HiddenFor(c => c.Customer.Id)
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.Name)
@@ -39,7 +40,9 @@ else
         @Html.DropDownListFor(c => c.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
         @Html.ValidationMessageFor(c => c.Customer.MembershipTypeId)
     </div>
-
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 
 }
+
+
