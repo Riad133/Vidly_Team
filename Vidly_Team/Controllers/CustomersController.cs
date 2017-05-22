@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 using Vidly_Team.Models;
 using Vidly_Team.ViewModel;
@@ -10,6 +11,7 @@ using Vidly_Team.ViewModels;
 
 namespace Vidly_Team.Controllers
 {
+    
     public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;

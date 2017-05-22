@@ -4,12 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using AutoMapper;
 using Vidly_Team.Dtos;
 using Vidly_Team.Models;
 
 namespace Vidly_Team.Controllers.Api
 {
+    [EnableCorsAttribute("http://localhost:2241", "*", "*")]
     public class CustomersController : ApiController
     {
         private ApplicationDbContext _context;
