@@ -25,20 +25,41 @@ namespace Vidly_Team.Controllers.Api
             return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
         }
 
-        //Get /api/customers/1
+        public IEnumerable<CustomerDto> GetCustomers(string search)
+        {
+            var customers =
+                _context.Customers.Where(c => c.Name.Contains(search)).Select(Mapper.Map<Customer, CustomerDto>);
+                            
+            return customers;
+        }
+
+        // Get /api/customers/1
         public CustomerDto GetCustomer(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-            if (customer == null)
+            Customer customer;
+            if (id > 0)
             {
+                 customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+                if (customer == null)
+                {
 
-                throw  new HttpResponseException(HttpStatusCode.NotFound);
+                    throw new HttpResponseException(HttpStatusCode.NotFound);
+                }
+            }
+            else
+            {
+                 customer =new Customer
+                               {
+                                 
+                                   IsSubscribeToNewsletter = true,
+                                   
+                               };
             }
             return Mapper.Map<Customer,CustomerDto>(customer);
         }
-        //Post /api/customers
+        // Post /api/customers
         [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        public CustomerDto CreateCustomer([FromBody]CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
@@ -52,9 +73,9 @@ namespace Vidly_Team.Controllers.Api
             return customerDto;
 
         }
-        //PUT /api/customers/1
+        // PUT /api/customers/1
         [HttpPut]
-        public void UpdateCustomer(int id, CustomerDto customerDto)
+        public void UpdateCustomer(int id,[FromBody] CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
@@ -71,7 +92,7 @@ namespace Vidly_Team.Controllers.Api
 
             _context.SaveChanges();
         }
-        //Delete /api/customers/1
+        // Delete /api/customers/1
         [HttpDelete]
         public void DeleteCustomer(int id)
         {

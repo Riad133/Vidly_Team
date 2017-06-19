@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vidly_Team", "Vidly_Team\Vidly_Team.csproj", "{AAE4CC99-9857-4141-973E-E861986BF3EA}"
 EndProject
@@ -10,26 +10,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		WebEssentials-Settings.json = WebEssentials-Settings.json
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Vidly.Client", "http://localhost:2241", "{F9043988-89E1-4A7B-9419-12283A22B101}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Vidly.Client(2)", "Vidly.Client\", "{BAD29FAA-39C5-4CD1-9636-D89D0E63CBDA}"
 	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_2241"
-		Debug.AspNetCompiler.PhysicalPath = "..\Vidly.Client\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2241\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_19271"
+		Debug.AspNetCompiler.PhysicalPath = "Vidly.Client\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19271\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_2241"
-		Release.AspNetCompiler.PhysicalPath = "..\Vidly.Client\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2241\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_19271"
+		Release.AspNetCompiler.PhysicalPath = "Vidly.Client\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19271\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\Vidly.Client\"
-		DefaultWebSiteLanguage = "Visual Basic"
+		VWDPort = "19271"
+		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
 Global
@@ -42,10 +41,10 @@ Global
 		{AAE4CC99-9857-4141-973E-E861986BF3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE4CC99-9857-4141-973E-E861986BF3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE4CC99-9857-4141-973E-E861986BF3EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9043988-89E1-4A7B-9419-12283A22B101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9043988-89E1-4A7B-9419-12283A22B101}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9043988-89E1-4A7B-9419-12283A22B101}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9043988-89E1-4A7B-9419-12283A22B101}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BAD29FAA-39C5-4CD1-9636-D89D0E63CBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD29FAA-39C5-4CD1-9636-D89D0E63CBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD29FAA-39C5-4CD1-9636-D89D0E63CBDA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD29FAA-39C5-4CD1-9636-D89D0E63CBDA}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
