@@ -1,0 +1,62 @@
+﻿<div>
+    <form class="form-horizontal"
+          name="customertForm"
+       ng-controller="CustomerEditCtrl as vm"
+    >
+        <fieldset>
+            <legend>Basic Customer Information</legend>
+            <div class="form-group">
+                <label class="col-sm-2">Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="customer.name" placeholder="Name" ng-model="vm.customer.name"/>
+                </div>
+            </div>
+
+     
+        
+            <div class="form-group">
+                <label class="col-sm-2">MemberShip Type</label>
+                <div class="col-sm-6">
+                    <select ng-model="vm.customer.membershipTypeId" >
+                        <option ng-repeat="x in  vm.memberShipTypes" ng-value ="x.id">{{x.name}}</option>
+                    </select>
+                </div>
+            </div>
+       
+            <div class="form-group">
+                <div class="col-sm-offset-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="vm.customer.isSubscribeToNewsletter"/>  Subscribe To Newsletter
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit()"
+                        >
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel(customertForm)">
+                            Cancel
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div >{{vm.message}}</div>
+            </div>
+        </fieldset>
+       
+    </form>
+   
+</div>

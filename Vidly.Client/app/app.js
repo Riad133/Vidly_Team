@@ -1,5 +1,6 @@
 ﻿(function() {
     "use strict";
-    var app = angular.module("vidly",[]);
+    var app = angular.module("vidly",
+        ["common.services"]);
 
 }());

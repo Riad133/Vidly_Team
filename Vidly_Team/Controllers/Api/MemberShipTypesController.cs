@@ -9,7 +9,7 @@ using Vidly_Team.Models;
 
 namespace Vidly_Team.Controllers.Api
 {
-    [EnableCors("http://localhost:2241", "*", "*")]
+    [EnableCors("*", "*", "*")]
     public class MemberShipTypesController : ApiController
     {
         private ApplicationDbContext _context;

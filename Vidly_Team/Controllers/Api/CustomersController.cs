@@ -11,15 +11,16 @@ using Vidly_Team.Models;
 
 namespace Vidly_Team.Controllers.Api
 {
-    [EnableCorsAttribute("http://localhost:2241", "*", "*")]
+    [EnableCorsAttribute("*", "*", "*")]
     public class CustomersController : ApiController
     {
         private ApplicationDbContext _context;
-        //Get /api/customers
+      
         public CustomersController()
         {
             _context = new ApplicationDbContext();
         }
+        //Get /api/customers
         public IEnumerable<CustomerDto> GetCustomers()
         {
             return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
