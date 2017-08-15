@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -239,6 +240,18 @@
     <Compile Include="Migrations\201704211705489_SeedGenroProperty.cs" />
     <Compile Include="Migrations\201704211705489_SeedGenroProperty.Designer.cs">
       <DependentUpon>201704211705489_SeedGenroProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708091648092_addRanageInName.cs" />
+    <Compile Include="Migrations\201708091648092_addRanageInName.Designer.cs">
+      <DependentUpon>201708091648092_addRanageInName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708091706556_removeRanageInName.cs" />
+    <Compile Include="Migrations\201708091706556_removeRanageInName.Designer.cs">
+      <DependentUpon>201708091706556_removeRanageInName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708091708219_removeRanageInName1.cs" />
+    <Compile Include="Migrations\201708091708219_removeRanageInName1.Designer.cs">
+      <DependentUpon>201708091708219_removeRanageInName1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1137,6 +1150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704211705489_SeedGenroProperty.resx">
       <DependentUpon>201704211705489_SeedGenroProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708091648092_addRanageInName.resx">
+      <DependentUpon>201708091648092_addRanageInName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708091706556_removeRanageInName.resx">
+      <DependentUpon>201708091706556_removeRanageInName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708091708219_removeRanageInName1.resx">
+      <DependentUpon>201708091708219_removeRanageInName1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -4,24 +4,42 @@
         .controller("CustomerEditCtrl",
         ["customerResource",
             "membershiptypeResouce",
-            "$scope",
+            
+            "$stateParams",
             CustomerEditCtrl]
     );
 
-    function CustomerEditCtrl(customerResource, membershiptypeResouce,$scope) {
+    function CustomerEditCtrl(customerResource, membershiptypeResouce, $stateParams) {
 
         var vm = this;
         vm.message = "";
         vm.Orginalcustomer = {};
         vm.customer = {};
-        customerResource.get({ id: 5 }, function (data) {
-            vm.customer = data;
-            vm.Orginalcustomer = angular.copy(vm.customer);
+       // console.log("customer " + $stateParams.id);
+        
+        customerResource.get({ id: $stateParams.id},
+            function (data) {
+                vm.customer = data;
+                vm.customer.birthDate = new Date(vm.customer.birthDate);
+                vm.Orginalcustomer = angular.copy(vm.customer);
+                console.log("$stateProvider ->" + $stateParams.id);
+        },
+            function (response) {
+           
+            vm.message = response.statusText + "--\r\n";
+            console.log(response.data.exceptionMessage);
+            if (response.data.exceptionMessage) {
+                console.log(response.data.exceptionMessage);
+                vm.message += response.data.exceptionMessage;
+            }
         });
 
         vm.memberShipTypes = {};
         membershiptypeResouce.query(function(data) {
             vm.memberShipTypes = data;
+            
+          //  console.log("Customer editCtrl -> >"+vm.customer);
+
         });
         
        
@@ -29,7 +47,15 @@
            if (vm.customer.id) {
                vm.customer.$update({ id: vm.customer.id },
                    function(data) {
-                       vm.message = "...Save Successfully";
+                       vm.message = "...Save Successfully"; 
+                   },
+                   function (response) {
+                       vm.message = response.statusText + "--\r\n";
+                       console.log(response.data.exceptionMessage);
+                       if (response.data.exceptionMessage) {
+                           console.log(response.data.exceptionMessage);
+                           vm.message += response.data.exceptionMessage;
+                       }
                    }
                );
            }
@@ -41,7 +67,13 @@
             vm.customer = angular.copy(vm.Orginalcustomer);
             vm.message = "";
         }
-        
+
+   
+        vm.open = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            vm.opened = !vm.opened;
+        };
 
     }
 
