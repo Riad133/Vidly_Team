@@ -29,12 +29,40 @@
                 })
                 .state("customerEdit",
                 {
-                    url: "/customers/:id",
+                    url: "/customers/Edit/:id",
                     templateUrl: "app/customer/customerEditView.html",
-                    controller: "CustomerEditCtrl as vm"
-                });
-            
+                    controller: "CustomerEditCtrl as vm",
+                    resolve: {
+                        customerResource: "customerResource",
+                        customer: function (customerResource, $stateParams) {
+                            var customerId = $stateParams.id;
 
+                            return customerResource.get({ id: customerId });
+
+                        }
+                    }
+
+                })
+                .state("customerDetail",
+                {
+                    url: "/customers/detail/:id",
+                    templateUrl: "app/customer/customerDetailView.html",
+                    controller: "CustomerDetailCtrl as vm",
+                    resolve: {
+                        customerResource: "customerResource",
+                        customer: function (customerResource, $stateParams) {
+                            var customerId = $stateParams.id;
+                            console.log("Customers : "+customerResource.get({ id: customerId }).$promise);
+
+                            return customerResource.get({ id: customerId });
+
+                        }
+                    }
+
+                });
+                
+            
+            
             // console.log("Config apperar");
         }]);
 

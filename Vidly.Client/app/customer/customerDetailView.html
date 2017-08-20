@@ -1,0 +1,46 @@
+﻿<div class="panel panel-primary" >
+    <div class="panel-heading" style="font-size: large">
+        Customer Details
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-8">
+               
+                <div class="row">
+                    <div class="col-md-4">Name :</div>
+                    <div class="col-md-8">{{vm.customer.name}}</div>
+                </div>
+               
+            </div>
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-4">Date of Birth :</div>
+                    <div class="col-md-8">{{vm.customer.birthDate | date}}</div>
+                </div>
+
+            </div> 
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-4">Subscribe to news letter :</div>
+                    <div class="col-md-8">{{vm.customer.isSubscribeToNewsletter === true ?"Yes" :"No"}}</div>
+                </div>
+
+            </div>
+            
+           
+        </div>
+
+       
+            <div class="col-md-8">
+                
+                    <div class="row">
+                        <div class="col-md-4">MemberShip Type</div>
+                        <div class="col-md-6">{{ vm.membershipType(vm.customer.membershipTypeId)}}</div>
+                    </div>
+
+            </div>
+        
+    </div>
+</div>

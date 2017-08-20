@@ -14,7 +14,7 @@
             <div class="navbar-header">
                 <div class="navbar-brand" ui-sref="home">Movie Management</div>
                 <a  class="navbar-brand" ui-sref="customerList"> Customerslist</a>
-                <a class="navbar-brand" ui-sref="customerEdit({id:1})">Add Customer</a>
+                <a class="navbar-brand" ui-sref="customerEdit({id:0})">Add Customer</a>
             </div>
         </div>
     </nav>
@@ -42,8 +42,10 @@
      <script src="common/customerResource.js"></script>
    
     <!-- Customer Controllers -->
+    <script src="app/customer/customerDetailCtrl.js"></script>
     <script src="app/customer/customerEditCtrl.js"></script>
     <script src="app/customer/customerListview.js"></script>
+    
 </body>
 
 </html>
